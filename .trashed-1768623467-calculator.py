@@ -27,12 +27,12 @@ def user():
         if op == 1 or op == 2:
             func()
             c.add(arr)
-            return next()
+            next()
                 
         elif op == 3:
             func()
             c.mul(arr)
-            return next()
+            next()
    
         elif op == 4:
             pass
@@ -50,25 +50,28 @@ def func():
     
 def next():
     
-    ch = input("Do you want to continue (y/n) :")
-    ch = ch.lower()
+    while True:
+        ch = input("Do you want to continue (y/n) :")
+        ch = ch.lower()
         
-    if ch == "y":
-        return user()
-        
-    elif ch == "n":
-        return exit()
+        if ch == "y":
+            user()
+            break
             
-    else:
-         
-        opt = input("Enter correct option (y/n) :")
-        opt = opt.lower()
+        elif ch == "n":
+            exit()
+            break
             
-        if opt == "y":
-            return user()
-                
         else:
-            return None
+            opt = input("Enter correct option (y/n) :")
+            opt = opt.lower()
+            
+            if opt == "y":
+                user()
+                break
+                
+            else:
+                break
         
 def exit():
     print("EXITING............")
