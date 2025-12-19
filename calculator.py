@@ -11,6 +11,10 @@ class Calculator:
         mul = np.prod(arr)
         print(mul)
         
+    def div(self, arr1, arr2):
+        div = np.divide(arr1,arr2)
+        print(div)
+        
 
 c = Calculator()
 
@@ -35,7 +39,15 @@ def user():
             return next()
    
         elif op == 4:
-            pass
+            ar1 = input("enter numerator numbers :")
+            ar2 = input("enter denominator numbers :")
+            ar1 = np.array(ar1.split(" "))
+            ar2 = np.array(ar2.split(" "))
+            arr1 = ar1.astype(float)
+            arr2 = ar2.astype(float)
+            c.div(arr1,arr2)
+            return next()
+            
         
         else:
             print("Enter correct option")
